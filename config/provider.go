@@ -23,12 +23,13 @@ import (
 	tjconfig "github.com/crossplane/terrajet/pkg/config"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 
-	"github.com/crossplane-contrib/provider-jet-template/config/null"
+	"github.com/alexisries/terrajet-test-dd/config/monitor"
+	"github.com/alexisries/terrajet-test-dd/config/null"
 )
 
 const (
-	resourcePrefix = "template"
-	modulePath     = "github.com/crossplane-contrib/provider-jet-template"
+	resourcePrefix = "datadog"
+	modulePath     = "github.com/alexisries/terrajet-test-dd"
 )
 
 //go:embed schema.json
@@ -44,11 +45,15 @@ func GetProvider() *tjconfig.Provider {
 	}
 
 	pc := tjconfig.NewProviderWithSchema([]byte(providerSchema), resourcePrefix, modulePath,
-		tjconfig.WithDefaultResourceFn(defaultResourceFn))
+			tjconfig.WithDefaultResourceFn(defaultResourceFn),
+			tjconfig.WithIncludeList([]string{
+				"datadog_monitor$",
+			}))
 
 	for _, configure := range []func(provider *tjconfig.Provider){
 		// add custom config functions
 		null.Configure,
+		monitor.Configure,
 	} {
 		configure(pc)
 	}

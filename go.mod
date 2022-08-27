@@ -1,4 +1,4 @@
-module github.com/crossplane-contrib/provider-jet-template
+module github.com/alexisries/terrajet-test-dd
 
 go 1.17
 
