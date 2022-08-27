@@ -1,4 +1,4 @@
-package branch
+package monitors
 
 import "github.com/crossplane/terrajet/pkg/config"
 
