@@ -22,7 +22,7 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	v1alpha1 "github.com/alexisries/terrajet-test-dd/apis/null/v1alpha1"
+	v1alpha1 "github.com/alexisries/terrajet-test-dd/apis/monitor/v1alpha1"
 	v1alpha1apis "github.com/alexisries/terrajet-test-dd/apis/v1alpha1"
 )
 

@@ -21,7 +21,7 @@ import (
 
 	"github.com/crossplane/terrajet/pkg/controller"
 
-	resource "github.com/alexisries/terrajet-test-dd/internal/controller/null/resource"
+	monitor "github.com/alexisries/terrajet-test-dd/internal/controller/monitor/monitor"
 	providerconfig "github.com/alexisries/terrajet-test-dd/internal/controller/providerconfig"
 )
 
@@ -29,7 +29,7 @@ import (
 // the supplied manager.
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
-		resource.Setup,
+		monitor.Setup,
 		providerconfig.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
