@@ -10,7 +10,8 @@ export TERRAFORM_VERSION := 1.1.6
 export TERRAFORM_PROVIDER_SOURCE := DataDog/datadog
 export TERRAFORM_PROVIDER_VERSION := 3.14.0
 export TERRAFORM_PROVIDER_DOWNLOAD_NAME := terraform-provider-datadog
-export TERRAFORM_PROVIDER_DOWNLOAD_URL_PREFIX := https://releases.hashicorp.com/terraform-provider-datadog/3.14.0
+export TERRAFORM_PROVIDER_DOWNLOAD_URL_PREFIX := https://releases.hashicorp.com/terraform-provider-datadog/${TERRAFORM_PROVIDER_VERSION}
+export TERRAFORM_NATIVE_PROVIDER_BINARY := terraform-provider-datadog_v${TERRAFORM_PROVIDER_VERSION}
 
 
 PLATFORMS ?= linux_amd64 linux_arm64
