@@ -45,10 +45,10 @@ func GetProvider() *tjconfig.Provider {
 	}
 
 	pc := tjconfig.NewProviderWithSchema([]byte(providerSchema), resourcePrefix, modulePath,
-			tjconfig.WithDefaultResourceFn(defaultResourceFn),
-			tjconfig.WithIncludeList([]string{
-				"datadog_monitor$",
-			}))
+		tjconfig.WithDefaultResourceFn(defaultResourceFn),
+		tjconfig.WithIncludeList([]string{
+			"datadog_monitor$",
+		}))
 
 	for _, configure := range []func(provider *tjconfig.Provider){
 		// add custom config functions
