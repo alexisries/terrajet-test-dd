@@ -1,4 +1,4 @@
-package monitors
+package monitor
 
 import "github.com/crossplane/terrajet/pkg/config"
 

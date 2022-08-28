@@ -23,7 +23,7 @@ import (
 	tjconfig "github.com/crossplane/terrajet/pkg/config"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 
-	"github.com/alexisries/terrajet-test-dd/config/monitors"
+	"github.com/alexisries/terrajet-test-dd/config/monitor"
 	"github.com/alexisries/terrajet-test-dd/config/null"
 )
 
@@ -53,7 +53,7 @@ func GetProvider() *tjconfig.Provider {
 	for _, configure := range []func(provider *tjconfig.Provider){
 		// add custom config functions
 		null.Configure,
-		monitors.Configure,
+		monitor.Configure,
 	} {
 		configure(pc)
 	}
